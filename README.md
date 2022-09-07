@@ -10,6 +10,7 @@ Tis application (Twitter Clone)was built using <br>
 5. CSS. <br>
 I have built the following pages within this application: login, sign up, dashboard, profile update, follow and unfollow, like and unlike, post sharing, chat box.<br>
 I really enjoyed using it. My previous projects I have not coverd all topics but now I'm coverd all topics like front end and backend.
-![twitter app 1](https://user-images.githubusercontent.com/98338459/188872213-28e0afd9-d250-40e2-ae0e-6640b62fbe66.jpg)
-![Uploading twitter app 2.jpg…]()
-![twitter app 3](https://user-images.githubusercontent.com/98338459/188872222-0f24ee89-196d-4960-ac03-0bf5ddb8f784.jpg)
+
+![twitter app 1](https://user-images.githubusercontent.com/98338459/188872416-26039b09-e43d-43d7-a15b-cfecc7f08e86.jpg)
+![twitter app 2](https://user-images.githubusercontent.com/98338459/188872465-75f335a3-c5bb-487a-8442-0482e9507321.jpg)
+![twitter app 3](https://user-images.githubusercontent.com/98338459/188872620-09d1d13e-f4ab-4213-8714-ed3f7a4df144.jpg)
