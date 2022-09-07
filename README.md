@@ -1,3 +1,4 @@
-# Twitter-Clone
+# Building Twitter Clone from Scratch Using React, Node, Express, MongoDB
 
-I'm using React.js, Node.js, Express.js, MongoDB
+#📣 Summary
+<hr>
