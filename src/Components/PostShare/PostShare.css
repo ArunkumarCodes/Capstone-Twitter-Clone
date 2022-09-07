@@ -32,7 +32,7 @@
     display: flex;
     justify-content: space-around;
 }
-.Option{
+.option{
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -43,7 +43,7 @@
     font-size: 12px;
 
 }
-.Option:hover{
+.option:hover{
     cursor: pointer;
 }
 .ps-button{

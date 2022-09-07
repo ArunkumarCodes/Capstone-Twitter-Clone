@@ -1,41 +1,71 @@
 import React from 'react'
 import './InfoCard.css'
 import {UilPen} from '@iconscout/react-unicons'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProfileModal from '../ProfileModal/ProfileModal';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import * as UserApi from '../../api/UserRequests.js'
+import { logOut } from './../../actions/AuthAction';
 
 const InfoCard = () => {
+    const dispatch = useDispatch();
+    const params = useParams();
     const [modalOpened, setmodalOpened]= useState(false);
+    const profileUserId = params.id
+    const [profileUser, setProfileUser] = useState({})
+
+    const {user}= useSelector((state)=> state.authReducer.authData)
+
+    const handleLogOut = () =>{
+        dispatch(logOut())
+    }
+
+    useEffect(()=>{
+        const fetchProfileUser = async()=>{
+            if(profileUserId === user._id){
+                setProfileUser(user)
+                console.log(user)
+            }else{
+                const profileUser = await UserApi.getUser(profileUserId)
+                setProfileUser(profileUser)
+                console.log(profileUser)
+            }
+        }
+        fetchProfileUser();
+    },[user])
+
   return (
     <div className='InfoCard'>
         <div className="infoHead">
-            <h4>Your Info</h4>
-           <div> <UilPen width='2rem' height='1.2rem'
+            <h4>Profile Info</h4>
+           {user._id === profileUserId ? ( <div> <UilPen width='2rem' height='1.2rem'
            onClick={()=> setmodalOpened(true)}
            />
            <ProfileModal modalOpened={modalOpened}
-           setModalOpened={setmodalOpened}/>
-           </div>
+           setModalOpened={setmodalOpened}
+           data = {user}/>
+           </div>) : ("")}
         </div>
         <div className="info">
             <span>
-                <b>Status </b>
+                <b>Status: </b>
             </span>
-            <span>Single</span>
+            <span>{profileUser.relationship}</span>
         </div>
         <div className="info">
             <span>
-                <b>Lives in </b>
+                <b>Lives in: </b>
             </span>
-            <span>Andhra Pradesh</span>
+            <span>{profileUser.livesin}</span>
         </div>
         <div className="info">
             <span>
-                <b>Works at </b>
+                <b>Works at: </b>
             </span>
-            <span>Looking</span>
+            <span>{profileUser.worksAt}</span>
         </div>
-        <button className='button logout-button'>Logout</button>
+        <button className='button logout-button' onClick={handleLogOut}>Logout</button>
     </div>
   )
 }

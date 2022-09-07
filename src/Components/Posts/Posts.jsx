@@ -15,6 +15,7 @@ const Posts = () => {
   useEffect(() => {
     dispatch(getTimelinePosts(user._id));
   }, []);
+  
   if(!posts) return 'No Posts';
   if(params.id) posts = posts.filter((post)=> post.userId===params.id)
   return (

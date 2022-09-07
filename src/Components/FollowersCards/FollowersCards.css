@@ -37,3 +37,9 @@
     padding-right: 20px;
     border-radius: 30px;
 }
+.UnfollowButton{
+    color: lightskyblue;
+    border: 2px solid lightskyblue;
+    cursor: pointer;
+    background: transparent
+}
